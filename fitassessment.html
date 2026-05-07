@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cosmos Sport — Αξιολόγηση Πολιτισμικής Εφαρμογής | Culture Fit Assessment</title>
+<title>Cosmos Sport - Αξιολόγηση Πολιτισμικής Εφαρμογής | Culture Fit Assessment</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" 
@@ -192,35 +192,51 @@ integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA
   
   /* PDF export specific styles */
   @media print {
-    body {
-      background: white;
-      padding: 0;
-      margin: 0;
-    }
-    .game-card {
-      box-shadow: none;
-      max-width: 100%;
-    }
-    .btn-primary, .btn-outline, .lang-toggle, .btn-dark, .name-input-area {
-      display: none !important;
-    }
-    .action-row {
-      display: none;
-    }
-    .header {
-      background: var(--black);
-      -webkit-print-color-adjust: exact;
-      print-color-adjust: exact;
-    }
-    .score-header {
-      -webkit-print-color-adjust: exact;
-      print-color-adjust: exact;
-    }
-    .dim-bar-inner {
-      -webkit-print-color-adjust: exact;
-      print-color-adjust: exact;
-    }
+  /* Κρύβουμε τα interactive στοιχεία */
+  .btn-primary, .btn-outline, .lang-toggle, .btn-dark, 
+  .name-input-area, #next-btn, .option-btn, .feedback-box,
+  .action-row button {
+    display: none !important;
   }
+  
+  /* Εξασφαλίζουμε τα ΑΚΡΙΒΗ χρώματα */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+  
+  /* Το μαύρο background να μείνει μαύρο */
+  .score-header, .header {
+    background: #111111 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  
+  /* Το κόκκινο να μείνει κόκκινο */
+  .verdict-badge.great, .btn-primary, .progress-inner,
+  .dim-bar-inner, .intro-badge {
+    background: #D0021B !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  
+  /* Λευκό κείμενο σε σκούρο φόντο */
+  .score-header, .header, .verdict-badge {
+    color: white !important;
+  }
+  
+  /* Βεβαιωνόμαστε ότι το φόντο της κάρτας είναι λευκό */
+  .game-card, .screen, body {
+    background: white !important;
+  }
+  
+  /* Αποφυγή break μέσα σε κάρτες */
+  .dimension-card, .score-header, .result-text {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
 
   @media (max-width: 520px) {
     body { padding: 16px 8px 40px; }
@@ -261,7 +277,7 @@ integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA
   <div class="screen active" id="screen-intro">
     <span class="intro-badge" id="introBadge">Interview Game</span>
     <div class="intro-heading" id="introHeading">Are You a<br>Cosmos Sport<br>Fit?</div>
-    <p class="intro-sub" id="introSub">10 situational challenges that reveal how you think, act, and move in a fast-paced sports retail environment. No right or wrong answers — only authentic ones.</p>
+    <p class="intro-sub" id="introSub">10 situational challenges that reveal how you think, act, and move in a fast-paced sports retail environment.</p>
     
     <!-- Name input field -->
     <div class="name-input-area">
@@ -314,7 +330,7 @@ const strings = {
   en: {
     headerLabel: "Culture Fit Assessment", headerTitleDefault: "Candidate Evaluation",
     introBadge: "Interview Game", introHeading: "Are You a<br>Cosmos Sport<br>Fit?",
-    introSub: "10 situational challenges that reveal how you think, act, and move in a fast-paced sports retail environment. No right or wrong answers — only authentic ones.",
+    introSub: "10 situational challenges that reveal how you think, act, and move in a fast-paced sports retail environment.",
     nameLabel: "👤 YOUR FULL NAME",
     namePlaceholder: "e.g., Maria Papadopoulou",
     pillars: { perf: "Performance", team: "Teamwork", pass: "Passion", cust: "Customer Focus" },
@@ -322,10 +338,10 @@ const strings = {
     scoreLabel: "Your culture fit score", restart: "PLAY AGAIN", print: "EXPORT PDF",
     verdicts: { great: "COSMOS MATERIAL", good: "STRONG FIT", partial: "DEVELOPING FIT", low: "NEEDS ALIGNMENT" },
     resultTexts: {
-      great: "Outstanding cultural alignment. You embody the Cosmos Sport values — passion, performance, teamwork, and customer obsession. You'd thrive in this environment from day one.",
+      great: "Outstanding cultural alignment. You embody the Cosmos Sport values: passion, performance, teamwork, and customer obsession. You'd thrive in this environment from day one.",
       good: "You show solid alignment with the Cosmos Sport culture. Your instincts are right in most situations. With some coaching and time in the environment, you'd be a real asset to the team.",
-      partial: "You have some of the right instincts but there are areas to strengthen. Reflect on the scenarios where you hesitated — those are growth opportunities in a sports retail culture.",
-      low: "This role may require a mindset shift. Cosmos Sport's culture is deeply rooted in sport, teamwork, and customer-first thinking. Consider how aligned you are with those values."
+      partial: "You have some of the right instincts but there are areas to strengthen. Reflect on the scenarios where you hesitated, those are growth opportunities in a sports retail culture.",
+      low: "This candidate may require a mindset shift. Cosmos Sport's culture is deeply rooted in sport, teamwork, and customer-first thinking. Consider how aligned you are with those values."
     },
     dimLabels: { customer: "Customer Focus", team: "Teamwork", performance: "Performance", passion: "Brand Passion" },
     candidatePrefix: "Candidate: "
@@ -335,7 +351,7 @@ const strings = {
     headerTitleDefault: "Αξιολόγηση Υποψηφίου",
     introBadge: "Παιχνίδι Συνέντευξης",
     introHeading: "Ταιριάζεις με την Cosmos Sport;",
-    introSub: "10 σενάρια που αποκαλύπτουν πώς σκέφτεσαι σε ένα γρήγορο περιβάλλον αθλητικού retail. Δεν υπάρχουν σωστές ή λάθος απαντήσεις — μόνο αυθεντικές.",
+    introSub: "10 σενάρια που αποκαλύπτουν πώς σκέφτεσαι σε ένα γρήγορο περιβάλλον αθλητικού retail. Δεν υπάρχουν σωστές ή λάθος απαντήσεις - μόνο αυθεντικές.",
     nameLabel: "👤 ΟΝΟΜΑΤΕΠΩΝΥΜΟ",
     namePlaceholder: "π.χ. Μαρία Παπαδοπούλου",
     pillars: { perf: "Απόδοση", team: "Ομαδικότητα", pass: "Πάθος", cust: "Πελατοκεντρισμός" },
@@ -347,10 +363,10 @@ const strings = {
     print: "ΕΞΑΓΩΓΗ PDF",
     verdicts: { great: "ΙΔΑΝΙΚΗ ΕΦΑΡΜΟΓΗ", good: "ΔΥΝΑΤΟ FIT", partial: "ΚΑΛΕΣ ΒΑΣΕΙΣ", low: "ΠΕΡΙΘΩΡΙΟ ΒΕΛΤΙΩΣΗΣ" },
     resultTexts: {
-      great: "Εξαιρετική ευθυγράμμιση με την κουλτούρα της Cosmos Sport. Ενσαρκώνεις τις αξίες — πάθος, απόδοση, ομαδικότητα και εστίαση στον πελάτη. Θα ανθίσεις από την πρώτη μέρα.",
+      great: "Εξαιρετική ευθυγράμμιση με την κουλτούρα της Cosmos Sport. Ενσαρκώνεις τις αξίες: πάθος, απόδοση, ομαδικότητα και εστίαση στον πελάτη. Θα ανθίσεις από την πρώτη μέρα.",
       good: "Δυνατή ευθυγράμμιση με την κουλτούρα. Οι αντιδράσεις σου είναι σωστές στις περισσότερες καταστάσεις. Με λίγη καθοδήγηση θα γίνεις πολύτιμο μέλος.",
-      partial: "Έχεις σωστές βάσεις αλλά υπάρχουν σημεία για βελτίωση. Αναλογίσου τα σενάρια όπου δίστασες — είναι ευκαιρίες ανάπτυξης.",
-      low: "Ο ρόλος ίσως χρειάζεται αλλαγή νοοτροπίας. Η Cosmos Sport βασίζεται στην ομαδικότητα, την ενέργεια και τον πελάτη. Σκέψου πόσο ταιριάζουν σε σένα."
+      partial: "Έχεις σωστές βάσεις αλλά υπάρχουν σημεία για βελτίωση. Αναλογίσου τα σενάρια όπου δίστασες, είναι ευκαιρίες ανάπτυξης.",
+      low: "Ο υποψήφιος/α ίσως χρειάζεται αλλαγή νοοτροπίας. Η Cosmos Sport βασίζεται στην ομαδικότητα, την ενέργεια και τον πελάτη. Σκέψου πόσο ταιριάζουν σε σένα."
     },
     dimLabels: { customer: "Πελατοκεντρισμός", team: "Ομαδικότητα", performance: "Απόδοση", passion: "Πάθος για Brand" },
     candidatePrefix: "Υποψήφιος/α: "
@@ -388,16 +404,16 @@ function refreshDimensionMax() {
 
 // Οι ερωτήσεις (ίδιες με πριν)
 const questions = [
-  { id:1, categoryEn:"🎯 Strategy & Culture", categoryEl:"🎯 Στρατηγική & Κουλτούρα", textEn:"Which of the following best describes the 'Omnichannel' strategy of Cosmos Sport?", textEl:"Ποιο από τα παρακάτω περιγράφει με τη μεγαλύτερη ακρίβεια την 'Omnichannel' στρατηγική της Cosmos Sport;", contextEn:"Understanding how Cosmos Sport integrates physical and digital retail.", contextEl:"Κατανόηση του πώς η Cosmos Sport ενσωματώνει το φυσικό και το ψηφιακό λιανεμπόριο.", optionsEn:[{text:"The complete integration of physical stores with the digital platform.",score:3,dim:"customer"},{text:"The existence of separate sales departments for the e-shop.",score:1,dim:"customer"},{text:"Exclusive focus on mobile phone sales.",score:0,dim:"customer"},{text:"Using social media only for advertising purposes.",score:0,dim:"customer"}], optionsEl:[{text:"Η πλήρης ενοποίηση των φυσικών καταστημάτων με την ψηφιακή πλατφόρμα.",score:3,dim:"customer"},{text:"Η ύπαρξη ξεχωριστών τμημάτων πωλήσεων για το e-shop.",score:1,dim:"customer"},{text:"Η αποκλειστική εστίαση στις πωλήσεις μέσω κινητών τηλεφώνων.",score:0,dim:"customer"},{text:"Η χρήση των κοινωνικών δικτύων μόνο για διαφημιστικούς σκοπούς.",score:0,dim:"customer"}], feedbackBestEn:"Exactly! The omnichannel approach breaks down barriers between physical and digital worlds.", feedbackBestEl:"Ακριβώς! Η omnichannel προσέγγιση καταργεί τα στεγανά μεταξύ φυσικού και ψηφιακού κόσμου.", feedbackOtherEn:"The key is integration — creating a seamless experience across all channels.", feedbackOtherEl:"Το κλειδί είναι η ενοποίηση — δημιουργώντας μια απρόσκοπτη εμπειρία σε όλα τα κανάλια." },
-  { id:2, categoryEn:"🧠 Growth Mindset", categoryEl:"🧠 Νοοτροπία Ανάπτυξης", textEn:"In Cosmos Sport culture, what does the term 'Growth Mindset' imply?", textEl:"Στην κουλτούρα της Cosmos Sport, τι υπονοεί ο όρος 'Growth Mindset';", contextEn:"Understanding the core values of personal and professional development.", contextEl:"Κατανόηση των βασικών αξιών προσωπικής και επαγγελματικής ανάπτυξης.", optionsEn:[{text:"Seeking faster hierarchical advancement at any cost.",score:0,dim:"performance"},{text:"The belief that abilities develop through effort and learning.",score:3,dim:"performance"},{text:"Focusing only on achieving monthly quantitative targets.",score:1,dim:"performance"},{text:"Avoiding risk to maintain stability.",score:0,dim:"performance"}], optionsEl:[{text:"Την επιδίωξη ταχύτερης ιεραρχικής ανέλιξης με κάθε κόστος.",score:0,dim:"performance"},{text:"Την πεποίθηση ότι οι ικανότητες αναπτύσσονται μέσα από την προσπάθεια και τη μάθηση.",score:3,dim:"performance"},{text:"Την εστίαση μόνο στην επίτευξη μηνιαίων ποσοτικών στόχων.",score:1,dim:"performance"},{text:"Την αποφυγή ρίσκου για τη διατήρηση της σταθερότητας.",score:0,dim:"performance"}], feedbackBestEn:"Perfect! Growth Mindset is about continuous improvement and embracing challenges.", feedbackBestEl:"Τέλεια! Το Growth Mindset αφορά τη συνεχή βελτίωση και την αποδοχή των προκλήσεων.", feedbackOtherEn:"The best employees see every challenge as a chance to learn and grow.", feedbackOtherEl:"Οι καλύτεροι υπάλληλοι βλέπουν κάθε πρόκληση ως ευκαιρία να μάθουν και να εξελιχθούν." },
-  { id:3, categoryEn:"📖 Brand Philosophy", categoryEl:"📖 Φιλοσοφία Brand", textEn:"What is the deeper meaning of the slogan 'Every Sport is a Story'?", textEl:"Ποια είναι η βαθύτερη σημασία του σλόγκαν 'Every Sport is a Story';", contextEn:"Understanding how Cosmos Sport connects with customers on an emotional level.", contextEl:"Κατανόηση του πώς η Cosmos Sport συνδέεται συναισθηματικά με τους πελάτες.", optionsEn:[{text:"Employees must tell stories about the products.",score:0,dim:"passion"},{text:"The company focuses only on sports with great history.",score:0,dim:"passion"},{text:"Every customer has a personal motivation that the company must support.",score:3,dim:"passion"},{text:"Marketing is based exclusively on narratives of famous athletes.",score:1,dim:"passion"}], optionsEl:[{text:"Οι εργαζόμενοι πρέπει να λένε ιστορίες για τα προϊόντα.",score:0,dim:"passion"},{text:"Η εταιρεία εστιάζει μόνο σε αθλήματα με μεγάλη ιστορία.",score:0,dim:"passion"},{text:"Κάθε πελάτης έχει ένα προσωπικό κίνητρο που η εταιρεία οφείλει να υποστηρίξει.",score:3,dim:"passion"},{text:"Το μάρκετινγκ βασίζεται αποκλειστικά σε αφηγήσεις διάσημων αθλητών.",score:1,dim:"passion"}], feedbackBestEn:"Exactly! We connect the product with the personal experience and goal of every athlete.", feedbackBestEl:"Ακριβώς! Συνδέουμε το προϊόν με το προσωπικό βίωμα και τον στόχο του κάθε αθλητή.", feedbackOtherEn:"Every customer's journey is unique and deserves to be understood and supported.", feedbackOtherEl:"Το ταξίδι κάθε πελάτη είναι μοναδικό και αξίζει να κατανοηθεί και να υποστηριχθεί." },
-  { id:4, categoryEn:"🤝 Team Culture", categoryEl:"🤝 Κουλτούρα Ομάδας", textEn:"You notice a new colleague struggling with the POS system during a busy Saturday. What do you do?", textEl:"Παρατηρείς έναν νέο συνάδελφο να δυσκολεύεται με το σύστημα POS ένα πολυάσχολο Σάββατο.", contextEn:"There's a long queue forming and the colleague looks visibly stressed.", contextEl:"Έχει σχηματιστεί μεγάλη ουρά και ο συνάδελφος φαίνεται εμφανώς αγχωμένος.", optionsEn:[{text:"Focus on your own customers — everyone needs to handle their own.",score:0,dim:"team"},{text:"Quickly finish your transaction, then go help them while queue is managed.",score:3,dim:"team"},{text:"Tell the manager to assign someone else to the register.",score:1,dim:"team"},{text:"Ignore it — they'll learn faster under pressure.",score:0,dim:"team"}], optionsEl:[{text:"Επικεντρώσου στους δικούς σου πελάτες — ο καθένας χειρίζεται τις δικές του υποχρεώσεις.",score:0,dim:"team"},{text:"Ολοκλήρωσε γρήγορα τη συναλλαγή σου και πήγαινε να βοηθήσεις ενώ διαχειρίζεται η ουρά.",score:3,dim:"team"},{text:"Πες στον υπεύθυνο να βάλει κάποιον άλλο στο ταμείο.",score:1,dim:"team"},{text:"Αγνόησέ το — θα μάθει πιο γρήγορα υπό πίεση.",score:0,dim:"team"}], feedbackBestEn:"Team success means stepping in when it matters most. Great teammates lift each other up.", feedbackBestEl:"Η επιτυχία της ομάδας σημαίνει να παρεμβαίνεις όταν έχει μεγαλύτερη σημασία." },
-  { id:5, categoryEn:"🔥 Brand Passion", categoryEl:"🔥 Πάθος για Brand", textEn:"A customer asks about a new product launch you haven't been trained on yet. How do you respond?", textEl:"Ένας πελάτης ρωτά για μια νέα κυκλοφορία προϊόντος για την οποία δεν έχεις εκπαιδευτεί ακόμα.", contextEn:"The customer seems genuinely excited and ready to purchase.", contextEl:"Ο πελάτης δείχνει πραγματικά ενθουσιασμένος και έτοιμος να αγοράσει.", optionsEn:[{text:"Say you don't know and direct them to the website.",score:0,dim:"passion"},{text:"Apologize and call a colleague who might know.",score:2,dim:"passion"},{text:"Enthusiastically say 'Let me find out for you!' and check available resources immediately.",score:3,dim:"passion"},{text:"Make up information to seem knowledgeable.",score:0,dim:"passion"}], optionsEl:[{text:"Πες ότι δεν ξέρεις και παρέπεμψέ τους στην ιστοσελίδα.",score:0,dim:"passion"},{text:"Ζήτα συγγνώμη και κάλεσε έναν συνάδελφο που μπορεί να ξέρει.",score:2,dim:"passion"},{text:"Πες με ενθουσιασμό 'Ασε με να το μάθω για εσένα!' και ψάξε άμεσα.",score:3,dim:"passion"},{text:"Εφεύρε πληροφορίες για να δείξεις ότι γνωρίζεις.",score:0,dim:"passion"}], feedbackBestEn:"True passion means going the extra mile — customers remember that energy.", feedbackBestEl:"Το αληθινό πάθος σημαίνει να κάνεις το έξτρα βήμα." },
-  { id:6, categoryEn:"🏃 Performance Culture", categoryEl:"🏃 Κουλτούρα Απόδοσης", textEn:"Your store is competing for a regional award on customer satisfaction. What's your approach?", textEl:"Το κατάστημά σας διαγωνίζεται για ένα περιφερειακό βραβείο ικανοποίησης πελατών.", contextEn:"The winning store gets recognition and a team bonus.", contextEl:"Το κατάστημα που θα νικήσει παίρνει αναγνώριση και μπόνους ομάδας.", optionsEn:[{text:"Focus only on your own metrics to secure your individual performance.",score:0,dim:"performance"},{text:"Mobilize the entire team, share best practices, and celebrate every small win together.",score:3,dim:"performance"},{text:"Work harder alone — you don't want to bother others.",score:1,dim:"performance"},{text:"It's just an award — doesn't matter.",score:0,dim:"performance"}], optionsEl:[{text:"Επικεντρώσου μόνο στα δικά σου μεγέθη για να εξασφαλίσεις την ατομική σου απόδοση.",score:0,dim:"performance"},{text:"Κινητοποίησε όλη την ομάδα, μοιράσου καλές πρακτικές και γιορτάστε μαζί.",score:3,dim:"performance"},{text:"Δούλεψε πιο σκληρά μόνος σου.",score:1,dim:"performance"},{text:"Είναι απλά ένα βραβείο — δεν πειράζει.",score:0,dim:"performance"}], feedbackBestEn:"True performance culture lifts everyone. When the team wins, you win.", feedbackBestEl:"Η πραγματική κουλτούρα απόδοσης ανεβάζει όλους." },
-  { id:7, categoryEn:"🎯 Customer Focus", categoryEl:"🎯 Εστίαση Πελάτη", textEn:"A regular customer complains about a price difference between online and in-store. What's your response?", textEl:"Ένας τακτικός πελάτης παραπονιέται για διαφορά τιμής μεταξύ online και καταστήματος.", contextEn:"The price match policy exists but has conditions the customer doesn't fully meet.", contextEl:"Η πολιτική αντιστοίχισης τιμής υπάρχει αλλά ο πελάτης δεν πληροί πλήρως τις προϋποθέσεις.", optionsEn:[{text:"Strictly enforce policy — rules are rules.",score:0,dim:"customer"},{text:"Explain the policy kindly and offer a small discount on next purchase as goodwill.",score:3,dim:"customer"},{text:"Ignore the complaint — it's not worth the time.",score:0,dim:"customer"},{text:"Blame the online team for the discrepancy.",score:0,dim:"customer"}], optionsEl:[{text:"Εφάρμοσε αυστηρά την πολιτική — οι κανόνες είναι κανόνες.",score:0,dim:"customer"},{text:"Εξήγησε ευγενικά την πολιτική και πρόσφερε μικρή έκπτωση για την επόμενη αγορά.",score:3,dim:"customer"},{text:"Αγνόησε το παράπονο.",score:0,dim:"customer"},{text:"Ρίξε το φταίξιμο στην online ομάδα.",score:0,dim:"customer"}], feedbackBestEn:"Loyalty is earned through empathy and creative problem-solving.", feedbackBestEl:"Η πίστη κερδίζεται μέσω ενσυναίσθησης και δημιουργικής επίλυσης." },
-  { id:8, categoryEn:"🤝 Collaboration", categoryEl:"🤝 Συνεργασία", textEn:"Your team needs to rearrange the entire store layout. How do you contribute?", textEl:"Η ομάδα σας πρέπει να αναδιοργανώσει όλη τη διάταξη του καταστήματος.", contextEn:"Everyone has different opinions on what's best.", contextEl:"Ο καθένας έχει διαφορετική άποψη για το τι είναι καλύτερο.", optionsEn:[{text:"Push for your idea aggressively.",score:0,dim:"team"},{text:"Stay quiet to avoid conflict.",score:1,dim:"team"},{text:"Listen to everyone, find common ground, and offer to execute the most tedious tasks.",score:3,dim:"team"},{text:"Wait for someone else to lead.",score:1,dim:"team"}], optionsEl:[{text:"Προώθησε επιθετικά τη δική σου ιδέα.",score:0,dim:"team"},{text:"Μείνε σιωπηλός για να αποφύγεις συγκρούσεις.",score:1,dim:"team"},{text:"Άκουσε όλους, βρες κοινό έδαφος και κάνε τις πιο κουραστικές δουλειές.",score:3,dim:"team"},{text:"Περίμενε κάποιον άλλον να ηγηθεί.",score:1,dim:"team"}], feedbackBestEn:"Great team players listen, find alignment, and do the work that matters most.", feedbackBestEl:"Οι σπουδαίοι παίκτες ακούν, βρίσκουν συναίνεση και κάνουν τη δουλειά." },
-  { id:9, categoryEn:"🏃 Proactive Mindset", categoryEl:"🏃 Προληπτική Νοοτροπία", textEn:"You see that the store's social media hasn't been updated in days. What do you do?", textEl:"Βλέπεις ότι τα social media του καταστήματος δεν έχουν ενημερωθεί για μέρες.", contextEn:"You're not officially responsible for social media.", contextEl:"Δεν είσαι επίσημα υπεύθυνος για τα social media.", optionsEn:[{text:"Notify the marketing person and offer to help with content ideas.",score:3,dim:"performance"},{text:"It's not your job — ignore it.",score:0,dim:"performance"},{text:"Post something yourself without asking.",score:1,dim:"performance"},{text:"Complain that nobody is doing their job.",score:0,dim:"performance"}], optionsEl:[{text:"Ενημέρωσε τον υπεύθυνο marketing και πρόσφερε βοήθεια με ιδέες.",score:3,dim:"performance"},{text:"Δεν είναι δουλειά σου — αγνόησέ το.",score:0,dim:"performance"},{text:"Ανάρτησε κάτι μόνος σου χωρίς να ρωτήσεις.",score:1,dim:"performance"},{text:"Παραπονέσου ότι κανείς δεν κάνει τη δουλειά του.",score:0,dim:"performance"}], feedbackBestEn:"Ownership means seeing what needs to be done and stepping up.", feedbackBestEl:"Η ιδιοκτησία σημαίνει να βλέπεις τι χρειάζεται και να αναλαμβάνεις δράση." },
-  { id:10, categoryEn:"🔥 Brand Identity", categoryEl:"🔥 Ταυτότητα Brand", textEn:"What does 'Cosmos Sport' represent in the Greek sports retail market?", textEl:"Τι αντιπροσωπεύει η 'Cosmos Sport' στην ελληνική αγορά αθλητικού λιανεμπορίου;", contextEn:"Understanding the brand's positioning and values.", contextEl:"Κατανόηση της τοποθέτησης και των αξιών του brand.", optionsEn:[{text:"A luxury sports brand for professionals only.",score:0,dim:"passion"},{text:"A community-driven retailer that democratizes sport for everyone.",score:3,dim:"passion"},{text:"An online-only discount store.",score:0,dim:"passion"},{text:"A fashion retailer with sporty clothes.",score:0,dim:"passion"}], optionsEl:[{text:"Μια πολυτελής αθλητική μάρκα μόνο για επαγγελματίες.",score:0,dim:"passion"},{text:"Ένας retailer με γνώμονα την κοινότητα που εκδημοκρατίζει τον αθλητισμό.",score:3,dim:"passion"},{text:"Ένα online-only κατάστημα εκπτώσεων.",score:0,dim:"passion"},{text:"Ένας retailer μόδας με αθλητικά ρούχα.",score:0,dim:"passion"}], feedbackBestEn:"Cosmos Sport believes sport is for everyone — that's our core identity.", feedbackBestEl:"Η Cosmos Sport πιστεύει ότι ο αθλητισμός είναι για όλους — αυτή είναι η ταυτότητά μας." }
+  { id:1, categoryEn:"🎯 Strategy & Culture", categoryEl:"🎯 Στρατηγική & Κουλτούρα", textEn:"Which of the following best describes the 'Omnichannel' strategy of Cosmos Sport?", textEl:"Ποιο από τα παρακάτω περιγράφει με τη μεγαλύτερη ακρίβεια την 'Omnichannel' στρατηγική της Cosmos Sport;", contextEn:"Understanding how Cosmos Sport integrates physical and digital retail.", contextEl:"Κατανόηση του πώς η Cosmos Sport ενσωματώνει το φυσικό και το ψηφιακό λιανεμπόριο.", optionsEn:[{text:"The complete integration of physical stores with the digital platform.",score:3,dim:"customer"},{text:"The existence of separate sales departments for the e-shop.",score:1,dim:"customer"},{text:"Focus on mobile phone sales.",score:0,dim:"customer"},{text:"Using social media for advertising purposes.",score:0,dim:"customer"}], optionsEl:[{text:"Η ενοποίηση των φυσικών καταστημάτων με την ψηφιακή πλατφόρμα.",score:3,dim:"customer"},{text:"Η ύπαρξη ξεχωριστών τμημάτων πωλήσεων για το e-shop.",score:1,dim:"customer"},{text:"Η εστίαση στις πωλήσεις μέσω κινητών τηλεφώνων.",score:0,dim:"customer"},{text:"Η χρήση των κοινωνικών δικτύων για διαφημιστικούς σκοπούς.",score:0,dim:"customer"}], feedbackBestEn:"Exactly! The omnichannel approach breaks down barriers between physical and digital worlds.", feedbackBestEl:"Ακριβώς! Η omnichannel προσέγγιση καταργεί τα στεγανά μεταξύ φυσικού και ψηφιακού κόσμου.", feedbackOtherEn:"The key is integration, thus creating a seamless experience across all channels.", feedbackOtherEl:"Το κλειδί είναι η ενοποίηση, δημιουργώντας έτσι μια απρόσκοπτη εμπειρία σε όλα τα κανάλια." },
+  { id:2, categoryEn:"🧠 Growth Mindset", categoryEl:"🧠 Νοοτροπία Ανάπτυξης", textEn:"In Cosmos Sport culture, what does the term 'Growth Mindset' imply?", textEl:"Στην κουλτούρα της Cosmos Sport, τι υπονοεί ο όρος 'Growth Mindset';", contextEn:"Understanding the core values of personal and professional development.", contextEl:"Κατανόηση των βασικών αξιών προσωπικής και επαγγελματικής ανάπτυξης.", optionsEn:[{text:"Seeking very fast hierarchical advancement.",score:0,dim:"performance"},{text:"The belief that abilities develop through learning.",score:3,dim:"performance"},{text:"Focusing only on achieving monthly targets.",score:1,dim:"performance"},{text:"Avoiding risk to maintain stability.",score:0,dim:"performance"}], optionsEl:[{text:"Την επιδίωξη ταχύτατης ιεραρχικής ανέλιξης",score:0,dim:"performance"},{text:"Την αίσθηση ότι οι ικανότητες αναπτύσσονται μέσα από τη μάθηση.",score:3,dim:"performance"},{text:"Την εστίαση μόνο στην επίτευξη μηνιαίων στόχων.",score:1,dim:"performance"},{text:"Την αποφυγή ρίσκου για τη διατήρηση της σταθερότητας.",score:0,dim:"performance"}], feedbackBestEn:"Perfect! Growth Mindset is about continuous improvement and embracing challenges.", feedbackBestEl:"Τέλεια! Το Growth Mindset αφορά τη συνεχή βελτίωση και την αποδοχή των προκλήσεων.", feedbackOtherEn:"The best employees see every challenge as a chance to learn and grow.", feedbackOtherEl:"Οι καλύτεροι υπάλληλοι βλέπουν κάθε πρόκληση ως ευκαιρία να μάθουν και να εξελιχθούν." },
+  { id:3, categoryEn:"📖 Brand Philosophy", categoryEl:"📖 Φιλοσοφία Brand", textEn:"What is the deeper meaning of the slogan 'Every Sport is a Story'?", textEl:"Ποια είναι η βαθύτερη σημασία του σλόγκαν 'Every Sport is a Story';", contextEn:"Understanding how Cosmos Sport connects with customers on an emotional level.", contextEl:"Κατανόηση του πώς η Cosmos Sport συνδέεται συναισθηματικά με τους πελάτες.", optionsEn:[{text:"Employees must tell stories about the products.",score:0,dim:"passion"},{text:"The company focuses mainly on sports with great history.",score:0,dim:"passion"},{text:"Every customer has a personal motivation that the company must support.",score:3,dim:"passion"},{text:"Marketing is based on narratives of famous athletes.",score:1,dim:"passion"}], optionsEl:[{text:"Οι εργαζόμενοι πρέπει να λένε ιστορίες για τα προϊόντα.",score:0,dim:"passion"},{text:"Η εταιρεία εστιάζει κυρίως σε αθλήματα με μεγάλη ιστορία.",score:0,dim:"passion"},{text:"Κάθε πελάτης έχει ένα προσωπικό κίνητρο που η εταιρεία οφείλει να υποστηρίξει.",score:3,dim:"passion"},{text:"Το μάρκετινγκ βασίζεται πολύ σε αφηγήσεις διάσημων αθλητών.",score:1,dim:"passion"}], feedbackBestEn:"Exactly! We connect the product with the personal experience and goal of every athlete.", feedbackBestEl:"Ακριβώς! Συνδέουμε το προϊόν με το προσωπικό βίωμα και τον στόχο του κάθε αθλητή.", feedbackOtherEn:"Every customer's journey is unique and deserves to be understood and supported.", feedbackOtherEl:"Το ταξίδι κάθε πελάτη είναι μοναδικό και αξίζει να κατανοηθεί και να υποστηριχθεί." },
+  { id:4, categoryEn:"🤝 Team Culture", categoryEl:"🤝 Κουλτούρα Ομάδας", textEn:"You notice a new colleague struggling with the POS system during a busy Saturday. What do you do?", textEl:"Παρατηρείς έναν νέο συνάδελφο να δυσκολεύεται με το σύστημα POS ένα πολυάσχολο Σάββατο.", contextEn:"There's a long queue forming and the colleague looks visibly stressed.", contextEl:"Έχει σχηματιστεί μεγάλη ουρά και ο συνάδελφος φαίνεται εμφανώς αγχωμένος.", optionsEn:[{text:"Focus on your own customers and afterwards help your colleague",score:1,dim:"team"},{text:"Quickly finish your transaction, then go help them while queue is managed.",score:3,dim:"team"},{text:"Tell the manager to assign someone else to the register.",score:0,dim:"team"},{text:"Ignore it, they'll learn faster under pressure.",score:0,dim:"team"}], optionsEl:[{text:"Επικεντρώσου στους δικούς σου πελάτες, και μετά βοήθα τον συνάδελφό σου",score:0,dim:"team"},{text:"Ολοκλήρωσε γρήγορα τη συναλλαγή σου και πήγαινε να βοηθήσεις τη διαχείριση της ουράς.",score:3,dim:"team"},{text:"Πες στον υπεύθυνο να βάλει κάποιον άλλο στο ταμείο.",score:0,dim:"team"},{text:"Αγνόησέ το, θα μάθει πιο γρήγορα υπό πίεση.",score:0,dim:"team"}], feedbackBestEn:"Team success means stepping in when it matters most. Great teammates lift each other up.", feedbackBestEl:"Η επιτυχία της ομάδας σημαίνει να παρεμβαίνεις όταν έχει μεγαλύτερη σημασία." },
+  { id:5, categoryEn:"🔥 Brand Passion", categoryEl:"🔥 Πάθος για Brand", textEn:"A customer asks about a new product launch you haven't been trained on yet. How do you respond?", textEl:"Ένας πελάτης ρωτά για μια νέα κυκλοφορία προϊόντος για την οποία δεν έχεις εκπαιδευτεί ακόμα.", contextEn:"The customer seems genuinely excited and ready to purchase.", contextEl:"Ο πελάτης δείχνει πραγματικά ενθουσιασμένος και έτοιμος να αγοράσει.", optionsEn:[{text:"Say you don't know and direct them to the website.",score:0,dim:"passion"},{text:"Apologize and call a colleague who might know.",score:2,dim:"passion"},{text:"Say 'Let me find out for you!' and check available resources immediately.",score:3,dim:"passion"},{text:"Make up information to seem knowledgeable, so that the customer doesn't wait.",score:0,dim:"passion"}], optionsEl:[{text:"Πες ότι δεν ξέρεις και παράπεμψέ τους στην ιστοσελίδα.",score:0,dim:"passion"},{text:"Ζήτα συγγνώμη και κάλεσε έναν συνάδελφο που μπορεί να ξέρει.",score:2,dim:"passion"},{text:"Πες 'Επιστρέφω αμέσως με ακριβείς πληροφορίες' και ψάξε άμεσα.",score:3,dim:"passion"},{text:"Προσποιήσου ότι έχεις πληροφορίες για να δείξεις ότι γνωρίζεις, ώστε να μη χρειαστεί να περιμένει ο πελάτης.",score:0,dim:"passion"}], feedbackBestEn:"True passion means going the extra mile, customers remember that energy.", feedbackBestEl:"Το αληθινό πάθος σημαίνει να κάνεις το έξτρα βήμα." },
+  { id:6, categoryEn:"🏃 Performance Culture", categoryEl:"🏃 Κουλτούρα Απόδοσης", textEn:"Your store is competing for a regional award on customer satisfaction. What's your approach?", textEl:"Το κατάστημά σας διαγωνίζεται για ένα περιφερειακό βραβείο ικανοποίησης πελατών.", contextEn:"The winning store gets recognition and a team bonus.", contextEl:"Το κατάστημα που θα νικήσει παίρνει αναγνώριση και μπόνους ομάδας.", optionsEn:[{text:"Focus on your own metrics to secure your individual performance.",score:0,dim:"performance"},{text:"Mobilize the entire team, celebrate every small win together.",score:3,dim:"performance"},{text:"Work harder alone, you don't want to bother others.",score:1,dim:"performance"},{text:"It's just an award, doesn't matter.",score:0,dim:"performance"}], optionsEl:[{text:"Επικεντρώσου στα δικά σου μεγέθη για να εξασφαλίσεις την ατομική σου απόδοση.",score:0,dim:"performance"},{text:"Κινητοποίησε όλη την ομάδα και αλληλοϋποστηριχθείτε .",score:3,dim:"performance"},{text:"Δούλεψε σκληρά μόνος σου, για να μην ενοχλήσεις τους υπόλοιπους.",score:1,dim:"performance"},{text:"Είναι απλά ένα βραβείο, δεν χάθηκε κι ο κόσμος πια.",score:0,dim:"performance"}], feedbackBestEn:"True performance culture lifts everyone. When the team wins, you win.", feedbackBestEl:"Η πραγματική κουλτούρα απόδοσης ανεβάζει όλους." },
+  { id:7, categoryEn:"🎯 Focus on Customer", categoryEl:"🎯 Εστίαση στον Πελάτη", textEn:"A regular customer complains about a price difference between online and in-store. What's your response?", textEl:"Ένας τακτικός πελάτης παραπονιέται για διαφορά τιμής μεταξύ online και καταστήματος.", contextEn:"The price match policy exists but has conditions the customer doesn't fully meet.", contextEl:"Η πολιτική αντιστοίχισης τιμής υπάρχει αλλά ο πελάτης δεν πληροί πλήρως τις προϋποθέσεις.", optionsEn:[{text:"Strictly enforce policy, rules are rules.",score:0,dim:"customer"},{text:"Explain the policy kindly and offer a small discount on next purchase as goodwill.",score:3,dim:"customer"},{text:"Ignore the complaint, it's not worth the time.",score:0,dim:"customer"},{text:"Blame the online team for the discrepancy.",score:0,dim:"customer"}], optionsEl:[{text:"Εφάρμοσε αυστηρά την πολιτική - οι κανόνες είναι κανόνες.",score:0,dim:"customer"},{text:"Εξήγησε ευγενικά την πολιτική και πρόσφερε μικρή έκπτωση για την επόμενη αγορά.",score:3,dim:"customer"},{text:"Αγνόησε το , δεν αξίζει τον κόπο.",score:0,dim:"customer"},{text:"Ρίξε το φταίξιμο στην ομάδα του e-shop.",score:0,dim:"customer"}], feedbackBestEn:"Loyalty is earned through empathy and creative problem-solving.", feedbackBestEl:"Η πίστη κερδίζεται μέσω ενσυναίσθησης και δημιουργικής επίλυσης." },
+  { id:8, categoryEn:"🤝 Collaboration", categoryEl:"🤝 Συνεργασία", textEn:"Your team needs to rearrange the entire store layout. How do you contribute?", textEl:"Η ομάδα σας πρέπει να αναδιοργανώσει όλη τη διάταξη του καταστήματος.", contextEn:"Everyone has different opinions on what's best.", contextEl:"Ο καθένας έχει διαφορετική άποψη για το τι είναι καλύτερο.", optionsEn:[{text:"Push for your idea aggressively.",score:0,dim:"team"},{text:"Stay quiet to avoid conflict.",score:1,dim:"team"},{text:"Listen to everyone, find common ground, and offer to execute the most tedious tasks.",score:3,dim:"team"},{text:"Wait for someone else to lead.",score:1,dim:"team"}], optionsEl:[{text:"Προώθησε επιθετικά τη δική σου ιδέα.",score:0,dim:"team"},{text:"Μείνε σιωπηλός για να αποφύγεις συγκρούσεις.",score:1,dim:"team"},{text:"Άκουσέ τους όλους, βρες κοινό έδαφος και κάνε τις πιο βαριές δουλειές.",score:3,dim:"team"},{text:"Περίμενε κάποιον άλλον να ηγηθεί.",score:1,dim:"team"}], feedbackBestEn:"Great team players listen, find alignment, and do the work that matters most.", feedbackBestEl:"Οι σπουδαίοι παίκτες ακούν, βρίσκουν συναίνεση και κάνουν τη δουλειά." },
+  { id:9, categoryEn:"🏃 Proactive Mindset", categoryEl:"🏃 Προληπτική Νοοτροπία", textEn:"You see that the store's social media hasn't been updated in days. What do you do?", textEl:"Βλέπεις ότι τα social media του καταστήματος δεν έχουν ενημερωθεί για μέρες.", contextEn:"You're not officially responsible for social media.", contextEl:"Δεν είσαι επίσημα υπεύθυνος για τα social media.", optionsEn:[{text:"Notify the marketing person and offer to help with content ideas.",score:3,dim:"performance"},{text:"It's not your job, ignore it.",score:0,dim:"performance"},{text:"Post something yourself without asking.",score:0,dim:"performance"},{text:"Complain that nobody is doing their job.",score:0,dim:"performance"}], optionsEl:[{text:"Ενημέρωσε τον υπεύθυνο marketing και πρόσφερε βοήθεια με ιδέες.",score:3,dim:"performance"},{text:"Δεν είναι δουλειά σου, αγνόησέ το.",score:0,dim:"performance"},{text:"Ανάρτησε κάτι μόνος σου χωρίς να ρωτήσεις.",score:0,dim:"performance"},{text:"Παραπονέσου ότι κανείς δεν κάνει τη δουλειά του.",score:0,dim:"performance"}], feedbackBestEn:"Ownership means seeing what needs to be done and stepping up.", feedbackBestEl:"Η ιδιοκτησία σημαίνει να βλέπεις τι χρειάζεται και να αναλαμβάνεις δράση." },
+  { id:10, categoryEn:"🔥 Brand Identity", categoryEl:"🔥 Ταυτότητα Brand", textEn:"What does 'Cosmos Sport' represent in the Greek sports retail market?", textEl:"Τι αντιπροσωπεύει η 'Cosmos Sport' στην ελληνική αγορά αθλητικού λιανεμπορίου;", contextEn:"Understanding the brand's positioning and values.", contextEl:"Κατανόηση της τοποθέτησης και των αξιών του brand.", optionsEn:[{text:"A luxury sports brand for professionals only.",score:0,dim:"passion"},{text:"A community-driven retailer that democratizes sport for everyone.",score:3,dim:"passion"},{text:"An online-only discount store.",score:0,dim:"passion"},{text:"A fashion retailer with sporty clothes.",score:0,dim:"passion"}], optionsEl:[{text:"Μια πολυτελής αθλητική μάρκα μόνο για επαγγελματίες.",score:0,dim:"passion"},{text:"Ένας retailer με γνώμονα την προώθηση της ισότητας τον αθλητισμό.",score:3,dim:"passion"},{text:"Ένα αποκλειστικά ηλεκτρονικό κατάστημα εκπτώσεων.",score:0,dim:"passion"},{text:"Ένας retailer μόδας με αθλητικά ρούχα.",score:0,dim:"passion"}], feedbackBestEn:"Cosmos Sport believes sport is for everyone, that's our core identity.", feedbackBestEl:"Η Cosmos Sport πιστεύει ότι ο αθλητισμός είναι για όλους, αυτή είναι η ταυτότητά μας." }
 ];
 
 function updateUITexts() {
@@ -541,53 +557,15 @@ function restartGame(){
 
 // Enhanced PDF export function with candidate name
 function exportToPDF() {
-  const element = document.getElementById('screen-result');
-  
-  // Show loading indicator
+  // Εμφανίζουμε προσωρινά ένα μήνυμα
   const printBtn = document.getElementById('printBtn');
   const originalText = printBtn.innerHTML;
-  printBtn.innerHTML = '⏳ GENERATING PDF...';
-  printBtn.disabled = true;
+  printBtn.innerHTML = '📄 OPEN PRINT DIALOG...';
   
-  // Ensure all dimension bars are fully rendered
-  document.querySelectorAll('.dim-bar-inner').forEach(bar => {
-    if (bar.dataset.pct) bar.style.width = bar.dataset.pct + '%';
-  });
-  
-  // Create filename with candidate name and date
-  let filename = `Cosmos_Sport_Assessment`;
-  if (candidateName && candidateName.trim() !== "") {
-    const safeName = candidateName.trim().replace(/[^a-z0-9ά-ωα-ώΑ-ΩΆ-ώ]/gi, '_').substring(0, 50);
-    filename = `${safeName}_Cosmos_Sport_Assessment`;
-  }
-  filename += `_${new Date().toISOString().split('T')[0]}.pdf`;
-  
-  const opt = {
-    margin: [0.5, 0.5, 0.5, 0.5],
-    filename: filename,
-    image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { 
-      scale: 2, 
-      letterRendering: true,
-      useCORS: true,
-      logging: false
-    },
-    jsPDF: { 
-      unit: 'in', 
-      format: 'a4', 
-      orientation: 'portrait' 
-    }
-  };
-  
-  html2pdf().set(opt).from(element).save().then(() => {
+  setTimeout(() => {
+    window.print();
     printBtn.innerHTML = originalText;
-    printBtn.disabled = false;
-  }).catch((error) => {
-    console.error('PDF generation error:', error);
-    printBtn.innerHTML = originalText;
-    printBtn.disabled = false;
-    alert('Υπήρξε ένα σφάλμα κατά τη δημιουργία PDF. Παρακαλώ δοκιμάστε ξανά.');
-  });
+  }, 100);
 }
 
 // Track candidate name input
