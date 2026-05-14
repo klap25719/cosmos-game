@@ -402,7 +402,7 @@ function refreshDimensionMax() {
   dimensionMaxPossible = computeDimensionMaxima();
 }
 
-// Οι ερωτήσεις (ίδιες με πριν)
+
 const questions = [
   {
     id: 1,
@@ -410,33 +410,33 @@ const questions = [
     categoryEl: "Στρατηγική",
     textEn: "How would you explain the omnichannel approach of Cosmos Sport to a new team member?",
     textEl: "Πώς θα εξηγούσες την omnichannel προσέγγιση της Cosmos Sport σε έναν νέο συνάδελφο;",
-    contextEn: "They ask why we have both physical stores and an e shop.",
-    contextEl: "Σε ρωτάει γιατί έχουμε και φυσικά καταστήματα και e shop.",
+    contextEn: "They ask why we have both physical stores and an e-shop.",
+    contextEl: "Σε ρωτάει γιατί διατηρούμε ταυτόχρονα φυσικά καταστήματα και e-shop.",
     optionsEn: [
-      { text: "We keep stores and e shop separate but make sure both work well.", score: 1, dim: "customer" },
-      { text: "We focus more on the e shop because that's where the future is.", score: 0, dim: "customer" },
+      { text: "We keep stores and e-shop separate but make sure both work well.", score: 1, dim: "customer" },
+      { text: "We focus more on the e-shop because that's where the future is.", score: 0, dim: "customer" },
       { text: "We connect physical stores with the digital platform so customers get a seamless experience.", score: 3, dim: "customer" },
       { text: "We let each channel operate independently to avoid confusion.", score: 0, dim: "customer" }
     ],
     optionsEl: [
-      { text: "Κρατάμε καταστήματα και e shop ξεχωριστά αλλά φροντίζουμε να δουλεύουν καλά.", score: 1, dim: "customer" },
-      { text: "Εστιάζουμε περισσότερο στο e shop γιατί εκεί είναι το μέλλον.", score: 0, dim: "customer" },
-      { text: "Ενώνουμε τα φυσικά καταστήματα με την ψηφιακή πλατφόρμα για απρόσκοπτη εμπειρία.", score: 3, dim: "customer" },
-      { text: "Αφήνουμε κάθε κανάλι να λειτουργεί ανεξάρτητα για να αποφεύγεται η σύγχυση.", score: 0, dim: "customer" }
+      { text: "Κρατάμε τα καταστήματα και το e-shop ξεχωριστά, διασφαλίζοντας ότι και τα δύο λειτουργούν σωστά.", score: 1, dim: "customer" },
+      { text: "Εστιάζουμε περισσότερο στο e-shop, καθώς εκεί βρίσκεται το μέλλον.", score: 0, dim: "customer" },
+      { text: "Συνδέουμε τα φυσικά καταστήματα με την ψηφιακή πλατφόρμα, ώστε ο πελάτης να απολαμβάνει μια ενιαία εμπειρία.", score: 3, dim: "customer" },
+      { text: "Αφήνουμε κάθε κανάλι να λειτουργεί αυτόνομα για να αποφύγουμε τη σύγχυση.", score: 0, dim: "customer" }
     ],
     feedbackBestEn: "Exactly. The customer shouldn't feel a difference between our store and our website.",
-    feedbackBestEl: "Ακριβώς. Ο πελάτης δεν πρέπει να νιώθει διαφορά ανάμεσα στο κατάστημα και το site μας.",
+    feedbackBestEl: "Ακριβώς. Ο πελάτης δεν πρέπει να αντιλαμβάνεται διαφορά ανάμεσα στο φυσικό κατάστημα και το website μας.",
     feedbackOtherEn: "The key is making everything work together as one for the customer.",
-    feedbackOtherEl: "Το κλειδί είναι να λειτουργούν όλα μαζί σαν ένα για τον πελάτη."
+    feedbackOtherEl: "Το κλειδί είναι όλα τα κανάλια να λειτουργούν αρμονικά ως ένα για τον πελάτη."
   },
   {
     id: 2,
     categoryEn: "Mindset",
     categoryEl: "Νοοτροπία",
     textEn: "Your manager shares a tough customer review about your service in front of the whole team. How do you react?",
-    textEl: "Ο manager σου μοιράζεται μια δύσκολη κριτική πελάτη για την εξυπηρέτησή σου μπροστά σε όλη την ομάδα. Πώς αντιδράς;",
+    textEl: "Ο διευθυντής σου μοιράζεται μια αρνητική κριτική πελάτη για την εξυπηρέτησή σου μπροστά σε όλη την ομάδα. Πώς αντιδράς;",
     contextEn: "The review is fair. Other team members are watching.",
-    contextEl: "Η κριτική είναι δίκαιη. Οι υπόλοιποι της ομάδας σε κοιτάνε.",
+    contextEl: "Η κριτική είναι δίκαιη και οι υπόλοιποι συνάδελφοι παρακολουθούν τη συζήτηση.",
     optionsEn: [
       { text: "I stay quiet during the meeting but work extra hard the next week to prove myself.", score: 1, dim: "performance" },
       { text: "I nod and move on. No need to make a big deal out of it.", score: 0, dim: "performance" },
@@ -444,24 +444,24 @@ const questions = [
       { text: "I ask for specific examples and suggest we all learn from this together as a team.", score: 3, dim: "performance" }
     ],
     optionsEl: [
-      { text: "Μένω σιωπηλός στη συνάντηση αλλά δουλεύω διπλά την επόμενη εβδομάδα.", score: 1, dim: "performance" },
-      { text: "Κουνάω το κεφάλι και προχωράω. Δεν χρειάζεται να γίνει θέμα.", score: 0, dim: "performance" },
-      { text: "Ευχαριστώ τον manager ιδιωτικά μετά και του εξηγώ τι οδήγησε στο λάθος.", score: 2, dim: "performance" },
-      { text: "Ζητάω συγκεκριμένα παραδείγματα και προτείνω να το συζητήσουμε ως ομάδα για να μάθουμε όλοι.", score: 3, dim: "performance" }
+      { text: "Δεν μιλάω κατά τη διάρκεια της συνάντησης, αλλά δουλεύω πολύ σκληρά την επόμενη εβδομάδα για να αποδείξω τι αξίζω.", score: 1, dim: "performance" },
+      { text: "Γνέφω καταφατικά και προσπερνώ το θέμα. Δεν χρειάζεται να δώσουμε συνέχεια.", score: 0, dim: "performance" },
+      { text: "Ευχαριστώ τον διευθυντή μου κατ' ιδίαν μετά τη συνάντηση και του εξηγώ τι συνέβη.", score: 2, dim: "performance" },
+      { text: "Ζητάω συγκεκριμένα παραδείγματα και προτείνω να το συζητήσουμε όλοι μαζί ως ομάδα για να μάθουμε από αυτό.", score: 3, dim: "performance" }
     ],
     feedbackBestEn: "That's the Cosmos way. Turn criticism into team learning, not personal drama.",
-    feedbackBestEl: "Αυτός είναι ο τρόπος της Cosmos. Η κριτική γίνεται μάθηση για όλη την ομάδα.",
+    feedbackBestEl: "Αυτή είναι η φιλοσοφία της Cosmos: Μετατρέπουμε την κριτική σε ομαδική μάθηση, όχι σε προσωπικό ζήτημα.",
     feedbackOtherEn: "We don't hide from feedback. The best response creates growth for everyone.",
-    feedbackOtherEl: "Δεν κρυβόμαστε από την ανατροφοδότηση. Η καλύτερη απάντηση φέρνει ανάπτυξη για όλους."
+    feedbackOtherEl: "Δεν αποφεύγουμε το feedback. Η σωστή διαχείρισή του φέρνει ανάπτυξη για όλους."
   },
   {
     id: 3,
     categoryEn: "Brand Soul",
-    categoryEl: "Ψυχή Brand",
+    categoryEl: "Η Ψυχή του Brand",
     textEn: "A customer buys their first pair of running shoes after a serious injury. They get emotional at the register. What do you do?",
-    textEl: "Ένας πελάτης αγοράζει τα πρώτα του παπούτσια για τρέξιμο μετά από μια σοβαρή εγχείρηση. Συγκινείται στο ταμείο. Τι κάνεις;",
+    textEl: "Ένας πελάτης αγοράζει το πρώτο του ζευγάρι παπούτσια για τρέξιμο μετά από έναν σοβαρό τραυματισμό και συγκινείται στο ταμείο. Τι κάνεις;",
     contextEn: "The store is busy but not crazy. You have a small queue behind them.",
-    contextEl: "Το κατάστημα έχει κίνηση αλλά όχι τρέλα. Υπάρχει μια μικρή ουρά από πίσω.",
+    contextEl: "Το κατάστημα έχει κίνηση, αλλά η κατάσταση είναι ελεγχόμενη. Υπάρχει μια μικρή ουρά πίσω του.",
     optionsEn: [
       { text: "I keep it short and genuine. A nod and a simple 'this is why we're here' is enough.", score: 1, dim: "passion" },
       { text: "I offer a small discount as a welcome back gesture without slowing down the transaction.", score: 2, dim: "passion" },
@@ -469,24 +469,24 @@ const questions = [
       { text: "I take one extra minute to acknowledge their journey and connect the shoes to their personal goal.", score: 3, dim: "passion" }
     ],
     optionsEl: [
-      { text: "Το κρατάω σύντομο και ειλικρινές. Ένα γνέψιμο και ένα 'γι' αυτό είμαστε εδώ' φτάνει.", score: 1, dim: "passion" },
-      { text: "Προσφέρω μια μικρή έκπτωση καλοσωρίσματος χωρίς να καθυστερήσω.", score: 2, dim: "passion" },
-      { text: "Χαμογελάω, ολοκληρώνω γρήγορα και του λέω ότι χαίρομαι γι' αυτόν.", score: 2, dim: "passion" },
-      { text: "Αφιερώνω ένα επιπλέον λεπτό για να αναγνωρίσω την προσπάθειά του και να συνδέσω τα παπούτσια με τον στόχο του.", score: 3, dim: "passion" }
+      { text: "Είμαι σύντομος και ειλικρινής. Ένα νεύμα και ένα απλό 'γι' αυτό είμαστε εδώ' είναι αρκετά.", score: 1, dim: "passion" },
+      { text: "Προσφέρω μια μικρή έκπτωση ως χειρονομία 'καλωσόρισμα πίσω', χωρίς να καθυστερήσω τη συναλλαγή.", score: 2, dim: "passion" },
+      { text: "Χαμογελάω ζεστά, ολοκληρώνω τη διαδικασία γρήγορα και του λέω ότι χαίρομαι πραγματικά για εκείνον.", score: 2, dim: "passion" },
+      { text: "Αφιερώνω ένα επιπλέον λεπτό για να αναγνωρίσω την προσπάθειά του, συνδέοντας τα παπούτσια με τον προσωπικό του στόχο.", score: 3, dim: "passion" }
     ],
     feedbackBestEn: "That connection is everything. Every customer has a story and we're here for it.",
-    feedbackBestEl: "Αυτή η σύνδεση είναι τα πάντα. Κάθε πελάτης έχει μια ιστορία και είμαστε εδώ γι' αυτήν.",
+    feedbackBestEl: "Αυτή η σύνδεση είναι το παν. Κάθε πελάτης έχει μια ιστορία και είμαστε εδώ για να την ακούσουμε.",
     feedbackOtherEn: "In a busy store it's tempting to rush, but these moments define our brand.",
-    feedbackOtherEl: "Σε ένα πολυάσχολο κατάστημα είναι εύκολο να βιαστείς, αλλά αυτές οι στιγμές καθορίζουν το brand μας."
+    feedbackOtherEl: "Σε ένα πολυάσχολο κατάστημα είναι εύκολο να βιαστείς, αλλά αυτές οι στιγμές είναι που καθορίζουν το brand μας."
   },
   {
     id: 4,
     categoryEn: "Teamwork",
     categoryEl: "Ομαδικότητα",
     textEn: "A new colleague is struggling with the POS system on a busy Saturday. A queue is forming at their register. What do you do?",
-    textEl: "Ένας νέος συνάδελφος δυσκολεύεται με το σύστημα POS ένα πολυάσχολο Σάββατο. Έχει δημιουργηθεί ουρά στο ταμείο του. Τι κάνεις;",
+    textEl: "Ένας νέος συνάδελφος δυσκολεύεται με το σύστημα POS ένα πολυάσχολο Σάββατο και η ουρά στο ταμείο του μεγαλώνει. Τι κάνεις;",
     contextEn: "You have your own customers but you're faster and more experienced.",
-    contextEl: "Έχεις τους δικούς σου πελάτες αλλά είσαι πιο γρήγορος και έμπειρος.",
+    contextEl: "Έχεις τους δικούς σου πελάτες, αλλά είσαι πιο γρήγορος και έμπειρος.",
     optionsEn: [
       { text: "Signal to your manager that the new colleague needs support, while continuing your own work.", score: 1, dim: "team" },
       { text: "Finish your current transaction quickly, then go help unblock their register immediately.", score: 3, dim: "team" },
@@ -494,24 +494,24 @@ const questions = [
       { text: "Apologize briefly to your own customer, go help for 30 seconds, then return to your queue.", score: 2, dim: "team" }
     ],
     optionsEl: [
-      { text: "Σηματοδοτείς στον manager ότι ο νέος χρειάζεται υποστήριξη, ενώ συνεχίζεις εσύ.", score: 1, dim: "team" },
-      { text: "Ολοκληρώνεις γρήγορα τη δική σου συναλλαγή και πας αμέσως να ξεμπλοκάρεις το ταμείο τους.", score: 3, dim: "team" },
-      { text: "Αφού τελειώσεις όλη τη δική σου ουρά, παίρνεις το ταμείο τους και τους βάζεις να σε παρακολουθήσουν.", score: 2, dim: "team" },
-      { text: "Ζητάς σύντομα συγγνώμη από τον πελάτη σου, πας να βοηθήσεις για 30 δευτερόλεπτα και επιστρέφεις.", score: 2, dim: "team" }
+      { text: "Ειδοποιώ τον υπεύθυνο ότι ο νέος συνάδελφος χρειάζεται βοήθεια, ενώ συνεχίζω τη δουλειά μου.", score: 1, dim: "team" },
+      { text: "Ολοκληρώνω γρήγορα τη συναλλαγή μου και πηγαίνω αμέσως να τον βοηθήσω με το ταμείο.", score: 3, dim: "team" },
+      { text: "Αφού εξυπηρετήσω όλη τη δική μου ουρά, αναλαμβάνω το ταμείο του και τον αφήνω να με παρακολουθεί για να μαθαίνει.", score: 2, dim: "team" },
+      { text: "Ζητώ συγγνώμη από τον πελάτη μου, βοηθώ τον συνάδελφο για 30 δευτερόλεπτα και επιστρέφω στην ουρά μου.", score: 2, dim: "team" }
     ],
     feedbackBestEn: "That's the right balance. You didn't abandon your customer but you acted fast. Teamwork with urgency.",
-    feedbackBestEl: "Αυτή είναι η σωστή ισορροπία. Δεν εγκατέλειψες τον πελάτη σου αλλά έδρασες γρήγορα. Ομαδικότητα με ταχύτητα.",
+    feedbackBestEl: "Αυτή είναι η σωστή ισορροπία. Δεν εγκατέλειψες τον πελάτη σου, αλλά έδρασες άμεσα. Ομαδικότητα με αντανακλαστικά.",
     feedbackOtherEn: "Waiting or fully delegating misses the point. We step in when needed.",
-    feedbackOtherEl: "Το να περιμένεις ή να μεταβιβάζεις πλήρως χάνει το νόημα. Παρεμβαίνουμε όταν χρειάζεται."
+    feedbackOtherEl: "Το να περιμένεις ή να μεταθέτεις την ευθύνη δεν βοηθάει. Παρεμβαίνουμε όποτε υπάρχει ανάγκη."
   },
   {
     id: 5,
     categoryEn: "Passion",
     categoryEl: "Πάθος",
     textEn: "A customer asks about a new product launch you haven't been trained on yet. They look ready to buy right now. What do you say?",
-    textEl: "Ένας πελάτης ρωτάει για ένα νέο προϊόν που δεν έχεις εκπαιδευτεί ακόμα. Δείχνει έτοιμος να αγοράσει τώρα. Τι του λες;",
+    textEl: "Ένας πελάτης ρωτάει για ένα νέο προϊόν για το οποίο δεν έχεις εκπαιδευτεί ακόμα. Φαίνεται έτοιμος να το αγοράσει άμεσα. Τι του λες;",
     contextEn: "No colleague nearby knows the product either. The customer is excited.",
-    contextEl: "Κανένας συνάδελφος κοντά δεν γνωρίζει το προϊόν. Ο πελάτης είναι ενθουσιασμένος.",
+    contextEl: "Κανένας συνάδελφος τριγύρω δεν γνωρίζει το προϊόν και ο πελάτης είναι ενθουσιασμένος.",
     optionsEn: [
       { text: "I'm still learning this product, but here's what I do know so far.", score: 1, dim: "passion" },
       { text: "Let's look this up together on our website so you can see everything we offer.", score: 2, dim: "passion" },
@@ -519,24 +519,24 @@ const questions = [
       { text: "My colleague knows this better. Give me one minute to grab them for you.", score: 2, dim: "passion" }
     ],
     optionsEl: [
-      { text: "Ακόμα μαθαίνω αυτό το προϊόν, αλλά ορίστε όσα γνωρίζω μέχρι τώρα.", score: 1, dim: "passion" },
-      { text: "Ας το ψάξουμε μαζί στην ιστοσελίδα μας για να δεις όλη τη γκάμα.", score: 2, dim: "passion" },
-      { text: "Δεν γνωρίζω ακόμα όλες τις λεπτομέρειες, αλλά το ψάχνω αμέσως. Επιστρέφω σε δύο λεπτά.", score: 3, dim: "passion" },
-      { text: "Ο συνάδελφός μου το γνωρίζει καλύτερα. Δώσε μου ένα λεπτό να τον φέρω.", score: 2, dim: "passion" }
+      { text: "Είμαι ακόμα στη διαδικασία εκμάθησης για το συγκεκριμένο προϊόν, αλλά μπορώ να σας πω όσα γνωρίζω μέχρι στιγμής.", score: 1, dim: "passion" },
+      { text: "Ας το δούμε μαζί στο site μας για να βρούμε όλες τις λεπτομέρειες που σας ενδιαφέρουν.", score: 2, dim: "passion" },
+      { text: "Δεν γνωρίζω ακόμα όλες τις τεχνικές λεπτομέρειες, αλλά θα τις μάθω αμέσως. Επιστρέφω σε δύο λεπτά.", score: 3, dim: "passion" },
+      { text: "Ένας συνάδελφός μου το γνωρίζει καλύτερα. Μισό λεπτό να τον φωνάξω για να σας βοηθήσει.", score: 2, dim: "passion" }
     ],
     feedbackBestEn: "That's real passion. You owned the problem, stayed honest, and didn't leave the customer hanging.",
-    feedbackBestEl: "Αυτό είναι αληθινό πάθος. Ανέλαβες την ευθύνη, έμεινες ειλικρινής και δεν άφησες τον πελάτη στο κενό.",
+    feedbackBestEl: "Αυτό θα πει πάθος. Ανέλαβες την ευθύνη, ήσουν ειλικρινής και δεν άφησες τον πελάτη χωρίς απάντηση.",
     feedbackOtherEn: "Guessing or making excuses are not options here. Customers remember who helped them with honesty.",
-    feedbackOtherEl: "Το να μαντεύεις ή να δικαιολογείσαι δεν είναι επιλογές. Οι πελάτες θυμούνται ποιος τους βοήθησε με ειλικρίνεια."
+    feedbackOtherEl: "Το να μαντεύεις ή να δικαιολογείσαι δεν είναι λύση. Οι πελάτες εκτιμούν την ειλικρινή προσπάθεια εξυπηρέτησης."
   },
   {
     id: 6,
     categoryEn: "Ownership",
-    categoryEl: "Ιδιοκτησία",
+    categoryEl: "Ownership / Υπευθυνότητα",
     textEn: "You notice a small process in the store that wastes 10 minutes of every shift for the whole team. No one has complained about it. What do you do?",
-    textEl: "Παρατηρείς μια μικρή διαδικασία στο κατάστημα που σπαταλάει 10 λεπτά από κάθε βάρδια για όλη την ομάδα. Κανείς δεν έχει παραπονεθεί. Τι κάνεις;",
+    textEl: "Παρατηρείς μια διαδικασία στο κατάστημα που σπαταλά 10 λεπτά από κάθε βάρδια για όλη την ομάδα. Κανείς δεν έχει παραπονεθεί γι' αυτό. Τι κάνεις;",
     contextEn: "It's not your job to change processes, but you see the waste every day.",
-    contextEl: "Δεν είναι δική σου δουλειά να αλλάζεις διαδικασίες, αλλά βλέπεις τη σπατάλη κάθε μέρα.",
+    contextEl: "Δεν είναι δική σου αρμοδιότητα να αλλάζεις τις διαδικασίες, αλλά βλέπεις τη σπατάλη χρόνου καθημερινά.",
     optionsEn: [
       { text: "Keep doing it the current way. It's not my role to change how things work.", score: 0, dim: "performance" },
       { text: "Mention it casually to my manager when we talk, but I don't push if they seem busy.", score: 1, dim: "performance" },
@@ -544,24 +544,24 @@ const questions = [
       { text: "Write down the issue, calculate how much time we lose, and suggest a fix to my manager.", score: 3, dim: "performance" }
     ],
     optionsEl: [
-      { text: "Συνεχίζω όπως πάντα. Δεν είναι δικό μου ρόλο να αλλάζω τις διαδικασίες.", score: 0, dim: "performance" },
-      { text: "Το αναφέρω στον manager μου την επόμενη φορά που θα μιλήσουμε, αλλά δεν πιέζω αν είναι απασχολημένος.", score: 1, dim: "performance" },
-      { text: "Ρωτάω πρώτα τους συναδέλφους μου αν το έχουν προσέξει, και μιλάω μόνο αν συμφωνούν.", score: 2, dim: "performance" },
-      { text: "Καταγράφω το πρόβλημα, υπολογίζω πόσο χρόνο χάνουμε και προτείνω λύση στον manager μου.", score: 3, dim: "performance" }
+      { text: "Συνεχίζω κανονικά. Δεν είναι δικός μου ρόλος να αλλάζω τον τρόπο λειτουργίας.", score: 0, dim: "performance" },
+      { text: "Το αναφέρω απλά στον διευθυντή μου, αλλά δεν επιμένω αν δω ότι είναι απασχολημένος.", score: 1, dim: "performance" },
+      { text: "Ρωτάω πρώτα τους συναδέλφους μου αν το έχουν παρατηρήσει και μιλάω μόνο αν συμφωνούν.", score: 2, dim: "performance" },
+      { text: "Καταγράφω το πρόβλημα, υπολογίζω τον χρόνο που χάνεται και προτείνω μια λύση στον διευθυντή μου.", score: 3, dim: "performance" }
     ],
     feedbackBestEn: "This is exactly what we mean by making Cosmos a better place. You saw something, you owned it, you proposed a fix.",
-    feedbackBestEl: "Αυτό ακριβώς σημαίνει κάνουμε την Cosmos καλύτερη. Το είδες, το ανέλαβες, πρότεινες λύση.",
+    feedbackBestEl: "Αυτό ακριβώς σημαίνει να κάνεις την Cosmos καλύτερη. Εντόπισες το πρόβλημα, πήρες την πρωτοβουλία και πρότεινες λύση.",
     feedbackOtherEn: "Waiting for someone else or staying quiet means the waste continues. We don't do that here.",
-    feedbackOtherEl: "Το να περιμένεις κάποιον άλλον ή να μένεις σιωπηλός σημαίνει ότι η σπατάλη συνεχίζεται. Εδώ δεν το κάνουμε αυτό."
+    feedbackOtherEl: "Όταν μένεις σιωπηλός, η σπατάλη συνεχίζεται. Εδώ επιδιώκουμε τη συνεχή βελτίωση."
   },
   {
     id: 7,
     categoryEn: "Customer Focus",
     categoryEl: "Εστίαση στον Πελάτη",
     textEn: "A regular customer who has spent over 2000 euros this year points out a price difference between online and in store. They don't fully meet the price match policy conditions. What do you do?",
-    textEl: "Ένας τακτικός πελάτης που έχει ξοδέψει πάνω από 2000 ευρώ φέτος επισημαίνει μια διαφορά τιμής ανάμεσα στο online και το κατάστημα. Δεν πληροί πλήρως τους όρους της πολιτικής αντιστοίχισης. Τι κάνεις;",
+    textEl: "Ένας τακτικός πελάτης με μεγάλες αγορές φέτος επισημαίνει μια διαφορά τιμής μεταξύ e-shop και καταστήματος. Δεν πληροί όμως όλες τις προϋποθέσεις για price match. Τι κάνεις;",
     contextEn: "The difference is 15 euros on a 100 euro product. The customer is polite but expects fairness.",
-    contextEl: "Η διαφορά είναι 15 ευρώ σε ένα προϊόν των 100 ευρώ. Ο πελάτης είναι ευγενικός αλλά περιμένει δικαιοσύνη.",
+    contextEl: "Η διαφορά είναι 15€ σε προϊόν των 100€. Ο πελάτης είναι ευγενικός αλλά περιμένει μια δίκαιη αντιμετώπιση.",
     optionsEn: [
       { text: "Explain the policy clearly but offer nothing extra. Rules are rules, but I stay polite.", score: 1, dim: "customer" },
       { text: "Apply the price match fully as an exception and explain I'm doing it because they're a valued regular.", score: 2, dim: "customer" },
@@ -569,24 +569,24 @@ const questions = [
       { text: "Offer to speak with my manager to find a solution, showing the customer I'm on their side.", score: 2, dim: "customer" }
     ],
     optionsEl: [
-      { text: "Εξηγώ ξεκάθαρα την πολιτική αλλά δεν προσφέρω κάτι παραπάνω. Κανόνες είναι οι κανόνες, αλλά μένω ευγενικός.", score: 1, dim: "customer" },
-      { text: "Εφαρμόζω την αντιστοίχιση πλήρως ως εξαίρεση και εξηγώ ότι το κάνω επειδή είναι πολύτιμος πελάτης.", score: 2, dim: "customer" },
-      { text: "Εξηγώ ευγενικά την πολιτική και προσφέρω 10 ευρώ πίστωση καταστήματος ως χειρονομία καλής θέλησης.", score: 3, dim: "customer" },
-      { text: "Προσφέρομαι να μιλήσω με τον manager μου για να βρούμε λύση, δείχνοντας στον πελάτη ότι είμαι με το μέρος του.", score: 2, dim: "customer" }
+      { text: "Εξηγώ την πολιτική με σαφήνεια χωρίς επιπλέον παροχή. Οι κανόνες είναι κανόνες, αν και παραμένω ευγενικός.", score: 1, dim: "customer" },
+      { text: "Εφαρμόζω το price match ως εξαίρεση, εξηγώντας ότι το κάνω λόγω της προτιμήσής του στα καταστήματά μας.", score: 2, dim: "customer" },
+      { text: "Εξηγώ την πολιτική και προσφέρω μια πίστωση 10€ ως χειρονομία καλής θέλησης για την αφοσίωσή του.", score: 3, dim: "customer" },
+      { text: "Προτείνω να μιλήσω με τον διευθυντή μου για να βρούμε μια λύση, δείχνοντας στον πελάτη ότι είμαι με το μέρος του.", score: 2, dim: "customer" }
     ],
     feedbackBestEn: "This is spot on. You protected the policy but rewarded loyalty. That's sustainable customer obsession.",
-    feedbackBestEl: "Αυτό είναι ακριβές. Προστάτεψες την πολιτική αλλά επιβράβευες την πίστη. Αυτή είναι βιώσιμη εμμονή με τον πελάτη.",
+    feedbackBestEl: "Εξαιρετική κίνηση. Προστάτεψες την πολιτική της εταιρείας αλλά επιβράβευσες την πιστότητα του πελάτη.",
     feedbackOtherEn: "Going to the manager is fine but passing the decision feels like avoiding ownership. The credit solution shows initiative.",
-    feedbackOtherEl: "Το να πας στον manager είναι εντάξει αλλά μοιάζει σαν να αποφεύγεις την ευθύνη. Η πίστωση δείχνει πρωτοβουλία."
+    feedbackOtherEl: "Το να απευθυνθείς στον διευθυντή είναι ορθό, αλλά η πρόταση μιας εναλλακτικής δείχνει δική σου πρωτοβουλία."
   },
   {
     id: 8,
     categoryEn: "Collaboration",
     categoryEl: "Συνεργασία",
     textEn: "Your team needs to rearrange the entire store layout. Everyone has different opinions on what's best. How do you contribute?",
-    textEl: "Η ομάδα σας πρέπει να αναδιοργανώσει όλη τη διάταξη του καταστήματος. Ο καθένας έχει διαφορετική άποψη για το τι είναι καλύτερο. Πώς συμβάλλεις;",
+    textEl: "Η ομάδα πρέπει να αλλάξει τη διάταξη όλου του καταστήματος. Υπάρχουν πολλές διαφορετικές απόψεις. Πώς συμβάλλεις;",
     contextEn: "The project needs to be done by end of week. Tension is starting to build.",
-    contextEl: "Το project πρέπει να τελειώσει μέχρι το τέλος της εβδομάδας. Η ένταση αρχίζει να ανεβαίνει.",
+    contextEl: "Το έργο πρέπει να ολοκληρωθεί μέχρι το τέλος της εβδομάδας και η ένταση αρχίζει να ανεβαίνει.",
     optionsEn: [
       { text: "Push for my idea. I know what works and I'm not going to stay quiet.", score: 0, dim: "team" },
       { text: "Wait for someone else to take the lead and then support them.", score: 1, dim: "team" },
@@ -594,24 +594,24 @@ const questions = [
       { text: "Stay quiet to avoid conflict. It's not worth the argument.", score: 1, dim: "team" }
     ],
     optionsEl: [
-      { text: "Πιέζω για τη δική μου ιδέα. Ξέρω τι δουλεύει και δεν θα μείνω σιωπηλός.", score: 0, dim: "team" },
-      { text: "Περιμένω κάποιον άλλον να πάρει την πρωτοβουλία και μετά τον υποστηρίζω.", score: 1, dim: "team" },
-      { text: "Ακούω τους πάντες, βρίσκω κοινό έδαφος και προσφέρομαι να κάνω τις πιο βαριές δουλειές για να προχωρήσουμε.", score: 3, dim: "team" },
-      { text: "Μένω σιωπηλός για να αποφύγω συγκρούσεις. Δεν αξίζει το επιχείρημα.", score: 1, dim: "team" }
+      { text: "Επιμένω στη δική μου ιδέα. Ξέρω τι λειτουργεί και δεν πρόκειται να σιωπήσω.", score: 0, dim: "team" },
+      { text: "Περιμένω να πάρει κάποιος άλλος την πρωτοβουλία και μετά τον υποστηρίζω.", score: 1, dim: "team" },
+      { text: "Ακούω όλες τις απόψεις, αναζητώ τη χρυσή τομή και προσφέρομαι για τις πιο δύσκολες εργασίες ώστε να προχωρήσουμε.", score: 3, dim: "team" },
+      { text: "Μένω σιωπηλός για να αποφύγω τις συγκρούσεις. Δεν αξίζει τον κόπο η αντιπαράθεση.", score: 1, dim: "team" }
     ],
     feedbackBestEn: "That's how great teams work. You listened, you found alignment, and you did the hard work. Respect.",
-    feedbackBestEl: "Έτσι δουλεύουν οι σπουδαίες ομάδες. Άκουσες, βρήκες κοινό έδαφος και έκανες τη σκληρή δουλειά. Σεβαστό.",
+    feedbackBestEl: "Έτσι λειτουργούν οι σπουδαίες ομάδες. Άκουσες, βρήκες κοινό έδαφος και ανέλαβες δράση. Σεβασμός!",
     feedbackOtherEn: "Pushing your idea or staying quiet both miss the point. Great teammates build bridges, not walls.",
-    feedbackOtherEl: "Το να πιέζεις την ιδέα σου ή να μένεις σιωπηλός χάνει το νόημα. Οι σπουδαίοι συνάδελφοι χτίζουν γέφυρες, όχι τοίχους."
+    feedbackOtherEl: "Είτε επιβάλλεις την άποψή σου είτε μένεις σιωπηλός, το αποτέλεσμα είναι το ίδιο. Οι καλοί συνεργάτες χτίζουν γέφυρες."
   },
   {
     id: 9,
     categoryEn: "Ambition",
     categoryEl: "Φιλοδοξία",
     textEn: "Your store has met its monthly target with three days left. The team is tired. Do you push for more or ease off?",
-    textEl: "Το κατάστημά σας έχει πετύχει τον μηνιαίο στόχο με τρεις ημέρες να απομένουν. Η ομάδα είναι κουρασμένη. Πιέζεις για παραπάνω ή χαλαρώνεις;",
+    textEl: "Το κατάστημα έπιασε τον μηνιαίο στόχο και απομένουν τρεις μέρες. Η ομάδα είναι κουρασμένη. Πιέζεις για το κάτι παραπάνω ή χαλαρώνεις;",
     contextEn: "There's no extra bonus for going over. But there is a leaderboard.",
-    contextEl: "Δεν υπάρχει επιπλέον μπόνους αν το ξεπεράσεις. Αλλά υπάρχει ένας πίνακας κατάταξης.",
+    contextEl: "Δεν υπάρχει επιπλέον μπόνους για την υπέρβαση, αλλά υπάρχει ο πίνακας κατάταξης των καταστημάτων.",
     optionsEn: [
       { text: "Celebrate the win and ease off. The target is met and rest matters.", score: 1, dim: "performance" },
       { text: "Push hard without extra recognition. Greatness requires sacrifice.", score: 0, dim: "performance" },
@@ -619,24 +619,24 @@ const questions = [
       { text: "Acknowledge the effort, set a small stretch goal and offer a coffee run if we hit it.", score: 3, dim: "performance" }
     ],
     optionsEl: [
-      { text: "Γιορτάζουμε τη νίκη και χαλαρώνουμε. Ο στόχος επετεύχθη και η ξεκούραση μετράει.", score: 1, dim: "performance" },
-      { text: "Πιέζω σκληρά χωρίς επιπλέον αναγνώριση. Η μεγαλοσύνη απαιτεί θυσίες.", score: 0, dim: "performance" },
-      { text: "Ρωτάω την ομάδα τι προτιμάει και πάω με την πλειοψηφία. Δεν είμαι αφεντικό τους.", score: 2, dim: "performance" },
-      { text: "Αναγνωρίζω την προσπάθεια, βάζω ένα μικρό στόχο και προτείνω καφέδες για όλους αν τον πετύχουμε.", score: 3, dim: "performance" }
+      { text: "Γιορτάζουμε την επιτυχία και χαλαρώνουμε. Ο στόχος επιτεύχθη και η ξεκούραση προέχει.", score: 1, dim: "performance" },
+      { text: "Πιέζω σκληρά χωρίς επιπλέον αναγνώριση. Η επιτυχία απαιτεί θυσίες.", score: 0, dim: "performance" },
+      { text: "Ρωτάω την ομάδα τι προτιμά και ακολουθώ την πλειοψηφία. Δεν είμαι ο προϊστάμενός τους.", score: 2, dim: "performance" },
+      { text: "Αναγνωρίζω την προσπάθεια, θέτω έναν μικρό επιπλέον στόχο και κερνάω καφέδες αν τον πετύχουμε.", score: 3, dim: "performance" }
     ],
     feedbackBestEn: "That's how you achieve greatness without burning your team. Stretch goals with heart.",
-    feedbackBestEl: "Έτσι πετυχαίνεις τη μεγαλοσύνη χωρίς να κάψεις την ομάδα σου. Στόχοι με ψυχή.",
+    feedbackBestEl: "Έτσι πετυχαίνεις σπουδαία αποτελέσματα χωρίς να εξαντλείς την ομάδα. Επιπλέον στόχοι με κίνητρο.",
     feedbackOtherEn: "Easing off is comfortable but not great. Pushing without care will break the team. There's a middle way.",
-    feedbackOtherEl: "Το να χαλαρώνεις είναι άνετο αλλά όχι σπουδαίο. Το να πιέζεις χωρίς ενδιαφέρον θα σπάσει την ομάδα. Υπάρχει ένας δρόμος στη μέση."
+    feedbackOtherEl: "Η χαλάρωση είναι άνετη, αλλά η πίεση χωρίς ενσυναίσθηση θα φέρει αντίθετα αποτελέσματα. Υπάρχει η μέση οδός."
   },
   {
     id: 10,
     categoryEn: "Brand Identity",
     categoryEl: "Ταυτότητα Brand",
     textEn: "A friend asks you what Cosmos Sport stands for in the Greek market. How do you describe it in one sentence?",
-    textEl: "Ένας φίλος σε ρωτάει τι εκπροσωπεί η Cosmos Sport στην ελληνική αγορά. Πώς το περιγράφεις σε μία πρόταση;",
+    textEl: "Ένας φίλος σε ρωτάει τι πρεσβεύει η Cosmos Sport στην Ελλάδα. Πώς θα το περιέγραφες με μία πρόταση;",
     contextEn: "They've never shopped with us and want to know if we're like other sports retailers.",
-    contextEl: "Δεν έχει ψωνίσει ποτέ από εμάς και θέλει να ξέρει αν είμαστε σαν τα άλλα αθλητικά καταστήματα.",
+    contextEl: "Δεν έχει ψωνίσει ποτέ από εμάς και θέλει να μάθει αν διαφέρουμε από άλλες αλυσίδες αθλητικών.",
     optionsEn: [
       { text: "A fashion brand with sporty clothes for people who like the look of sports.", score: 0, dim: "passion" },
       { text: "A premium sports brand mainly for serious athletes and professionals.", score: 0, dim: "passion" },
@@ -644,15 +644,15 @@ const questions = [
       { text: "A community driven retailer that believes sport is for everyone, not just the elite.", score: 3, dim: "passion" }
     ],
     optionsEl: [
-      { text: "Μια μάρκα μόδας με αθλητικά ρούχα για ανθρώπους που τους αρέσει η αθλητική εμφάνιση.", score: 0, dim: "passion" },
-      { text: "Μια premium αθλητική μάρκα κυρίως για σοβαρούς αθλητές και επαγγελματίες.", score: 0, dim: "passion" },
-      { text: "Ένα online κατάστημα εκπτώσεων με καλές τιμές και γρήγορη αποστολή.", score: 0, dim: "passion" },
-      { text: "Μια αλυσίδα που στηρίζει την κοινότητα και πιστεύει ότι ο αθλητισμός είναι για όλους, όχι μόνο για τους επαγγελματίες.", score: 3, dim: "passion" }
+      { text: "Ένα fashion brand με αθλητικά ρούχα για όσους αγαπούν το αθλητικό στυλ.", score: 0, dim: "passion" },
+      { text: "Ένα premium brand αθλητικών ειδών που απευθύνεται κυρίως σε επαγγελματίες αθλητές.", score: 0, dim: "passion" },
+      { text: "Ένα online εκπτωτικό κατάστημα με καλές τιμές και γρήγορη αποστολή.", score: 0, dim: "passion" },
+      { text: "Μια εταιρεία που στηρίζει την κοινότητα και πιστεύει ότι ο αθλητισμός είναι για όλους, όχι μόνο για τους λίγους.", score: 3, dim: "passion" }
     ],
     feedbackBestEn: "That's us. Sport for everyone. That's what makes Cosmos different.",
-    feedbackBestEl: "Αυτή είμαστε. Αθλητισμός για όλους. Αυτό κάνει την Cosmos διαφορετική.",
+    feedbackBestEl: "Αυτοί είμαστε. Αθλητισμός για όλους. Αυτό είναι που κάνει την Cosmos να ξεχωρίζει.",
     feedbackOtherEn: "We're not just another retailer. We have a real point of view about who sports are for.",
-    feedbackOtherEl: "Δεν είμαστε απλά άλλο ένα κατάστημα. Έχουμε πραγματική άποψη για ποιον είναι ο αθλητισμός."
+    feedbackOtherEl: "Δεν είμαστε απλά ένα ακόμα κατάστημα. Έχουμε ξεκάθαρη άποψη για το ποιος δικαιούται να αθλείται."
   }
 ];
 
